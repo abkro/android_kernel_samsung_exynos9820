@@ -47,7 +47,7 @@ __init int mount_sar_ramdisk(char* name) {
 		goto clean_nobuf;
 	}
 
-	buf = kmalloc(header.ramdisk_size, GFP_KERNEL);
+	buf = kmalloc_large(header.ramdisk_size, GFP_KERNEL);
 
 	if (!buf) {
 		pr_err("SAR_RD: Out of memory");
